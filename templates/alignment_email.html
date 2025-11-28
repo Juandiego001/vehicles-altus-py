@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        color: #333;
+      }
+      .serial-box {
+        background-color: #f4f4f4;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      .highlight {
+        color: #007bff;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Hola,</h2>
+
+    <p>Se ha generado un nuevo reporte de alineación.</p>
+
+    <div class="serial-box">
+      <p>Serial: <span class="highlight">{{ data['serial'] }}</span></p>
+      <p>Versión: {{ data['version'] }}</p>
+      <p>Specs: {{ data['specs'] }}</p>
+      <p>Specs Expiration: {{ data['specs_expiration'] }}</p>
+      <p>Fecha: {{ data['date'] }}</p>
+      <p>Fecha Altus: {{ data['date_altus'] }}</p>
+      <p>Vehículo: {{ data['vehicle'] }}</p>
+      <p>URL: {{ data['url'] }}</p>
+      <p>Tipo: {{ data['type'] }}</p>
+    </div>
+
+    <p>Saludos,<br /><br />El equipo de automatización.</p>
+  </body>
+</html>
