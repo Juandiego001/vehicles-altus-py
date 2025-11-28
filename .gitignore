@@ -1,0 +1,8 @@
+# Custom ignore
+__pycache__
+venv
+activate
+.env
+
+# Ignore logs folder
+logs
