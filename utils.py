@@ -47,13 +47,13 @@ def send_mail(alignments: list[dict], recipients: list):
         try:
             html_content = template.render(data=alignment)
             msg = MIMEMultipart('alternative')
-            msg['Subject'] = f'Aligment Serial: {alignment.get('serial')}'
+            msg['Subject'] = f'Alignment Serial: {alignment.get('serial')}'
             msg['From'] = MAIL_SENDER
             msg['To'] = ', '.join(recipients)
             msg.attach(MIMEText(html_content, 'html'))
             access_logger.info(f'Sending email to {', '.join(recipients)}')
             mailer.sendmail(MAIL_SENDER, recipients, msg.as_string())
-            r.set(alignment.get('serial'), 1)
+            r.set(alignment.get('serial'), 1, ex=86400)
         except Exception as ex:
             error_logger.exception(
                 f'There was an error while trying to send the email {str(ex)}')
